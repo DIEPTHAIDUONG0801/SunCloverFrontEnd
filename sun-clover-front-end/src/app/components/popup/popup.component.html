@@ -1,0 +1,13 @@
+<div class="popup-wrap" [ngClass]='data.StyleClass'>
+  <h1 mat-dialog-title>{{ data.Title }}</h1>
+  <mat-dialog-content [innerHTML]="data.Body">
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" *ngIf="data.AlignBtn === 'end'">
+    <button class="btn btn-default" mat-dialog-close *ngIf="data.CancelText">{{ data.CancelText }}</button>
+    <button class="btn btn-main" [mat-dialog-close]="true" *ngIf="data.ConfirmText">{{ data.ConfirmText }}</button>
+  </mat-dialog-actions>
+  <mat-dialog-actions align="center" *ngIf="data.AlignBtn === 'center'">
+    <button class="btn btn-default" mat-dialog-close *ngIf="data.CancelText">{{ data.CancelText }}</button>
+    <button class="btn btn-main" [mat-dialog-close]="true" *ngIf="data.ConfirmText">{{ data.ConfirmText }}</button>
+  </mat-dialog-actions>
+</div>

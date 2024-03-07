@@ -1,0 +1,147 @@
+@import '../../../assets/static/scss/variables';
+
+.background-login-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .image-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(1px) contrast(75%) grayscale(20%);
+  }
+
+  .form-login {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 15px 2px 10px rgba(0, 0, 0, 0.24);
+
+    .header {
+      width: 100%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      .image-logo {
+        height: 50%;
+      }
+
+      .name-logo {
+        .name-text {
+          margin: 0;
+          font-size: 20px;
+          font-weight: 500;
+        }
+        p {
+          font-size: 10px;
+          margin: 0;
+        }
+      }
+    }
+
+    .title {
+      height: 5%;
+      text-align: center;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    form {
+      width: 100%;
+      height: 62%;
+      padding-top: 5%;
+
+      .form-group-login {
+        width: 90%;
+        height: 18%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 5% auto;
+
+        label {
+          height: 10%;
+          color: $main-color;
+          margin-bottom: 18px;
+        }
+
+        input {
+          height: 90%;
+          border: solid 1px $main-color;
+          text-indent: 2%;
+          outline: none;
+          border-radius: 8px;
+          padding: 10px 0;
+        }
+      }
+
+      .show-password {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 auto 5% auto;
+      }
+
+      .message-error {
+        height: 40px;
+        text-align: center;
+        color: red;
+      }
+
+      .button-login {
+        button {
+          height: 60%;
+          border: none;
+          background: $main-color;
+          color: #f2f2f2;
+          border-radius: 8px;
+          cursor: pointer;
+          box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.24);
+        }
+        button:hover {
+          background: #c79752;
+        }
+      }
+    }
+
+    .footer {
+      width: 100%;
+      height: 13%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $main-color;
+
+      .phone {
+        font-weight: bold;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 860px) {
+    .form-login {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (min-width: 1240px) {
+    .form-login {
+      width: 40%;
+    }
+  }
+}

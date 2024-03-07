@@ -1,0 +1,26 @@
+@import './../../../assets/static/scss/variables';
+
+.popup-wrap {
+
+  //------ Begin CUSTOM ------//
+  &.popup-mobile {
+    height: 100%;
+    position: relative;
+    mat-dialog-actions {
+      position: absolute;
+      bottom: 6px;
+      width: 100%;
+    }
+    mat-dialog-content {
+      max-height: 73vh;
+    }
+  }
+  &.preview-post {
+    mat-dialog-content {
+      padding: 0 24px;
+      margin: 12px -24px;
+    }
+  }
+  //------ End CUSTOM ------//
+
+}

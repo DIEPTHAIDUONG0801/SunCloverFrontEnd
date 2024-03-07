@@ -1,0 +1,55 @@
+@use "sass:math";
+@import './variables';
+
+@mixin headerStyle {
+  font-weight: $header-weight;
+  font-size: $header-text;
+  line-height: 6rem;
+}
+
+
+@function squareEdge($radius) {
+  @return $radius * math.sqrt(2);
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin tringleEdge($radius) {
+  content: "";
+  width: squareEdge($radius);
+  height: squareEdge($radius);
+  z-index: 99;
+  position: absolute;
+  transform: rotate(45deg);
+  border-top: 0.13rem solid transparent;
+  border-right: 0.13rem solid transparent;
+  top: 7px;
+  right: (squareEdge($radius))/(-2);
+}
+
+@mixin scrollbar-style {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: .6rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+  }
+}
+
+// calculate Rems
+@function rem($size, $context: $base-size) {
+  @return calc($size / $context) * 1rem;
+}
+
+// calculate em
+@function em($size, $context: $base-size) {
+  @return calc($size / $context) * 1em;
+}

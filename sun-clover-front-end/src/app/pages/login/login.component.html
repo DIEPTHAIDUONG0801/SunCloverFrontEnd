@@ -1,0 +1,38 @@
+<div class="background-login-page">
+  <img class="image-background" src="./assets/images/jpg/backgound-login.jpg" alt="background-login">
+  <div class="form-login">
+    <div class="header">
+      <img class="image-logo" src="./assets/images/png/logo_no_text.png" alt="Logo Sun Clover">
+      <div class="name-logo">
+        <p class="name-text">Sun Clover</p>
+        <p>Coffee and tea</p>
+      </div>
+    </div>
+    <p class="title">Đăng nhập</p>
+    <form method="POST">
+      <div class="form-group-login">
+        <label>Email</label>
+        <input matInput type="email" class="input" placeholder="Ví dụ: admin@gmail.com" required
+               [(ngModel)]="emailUser" name="email" #email="ngModel" (keydown.enter)="login(email.valid && password.valid)">
+      </div>
+      <div class="form-group-login">
+        <label>Mật khẩu</label>
+        <input matInput [type]="isShowPassword ? 'text' : 'password' " class="input" placeholder="Mật khẩu" required
+               [(ngModel)]="passwordUser" name="password" #password="ngModel" (keydown.enter)="login(email.valid && password.valid)">
+      </div>
+      <div class="show-password">
+        <input (click)="showAndHidePassword()" id="check-box-show-password" type="checkbox">
+        <label for="check-box-show-password">Hiển thị mật khẩu</label>
+      </div>
+      <div class="message-error">
+        <p>{{messageError}}</p>
+      </div>
+      <div class="button-login form-group-login">
+        <button (click)="login(email.valid && password.valid)">Đăng nhập</button>
+      </div>
+    </form>
+    <div class="footer">
+      <p>Nếu xảy ra lỗi. Vui lòng liên hệ: <span class="phone">0939816390</span></p>
+    </div>
+  </div>
+</div>
